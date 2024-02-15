@@ -44,8 +44,8 @@ function AddToBtn({ user_id, movie, alreadyFavorited }: Props) {
     <Button
       className={`flex w-[170px] gap-2 border-2 border-red-500 ${
         !alreadyFavorited
-          ? "bg-transparent duration-200 hover:bg-red-500"
-          : "bg-red-500 hover:bg-transparent"
+          ? "bg-transparent duration-200 hover:bg-red-500 focus:bg-red-500"
+          : "bg-red-500 hover:bg-transparent focus:bg-transparent"
       }`}
       onClick={handleClick}
     >
