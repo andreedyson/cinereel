@@ -9,10 +9,13 @@ import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
+import { HiEye, HiEyeSlash } from "react-icons/hi2";
+
 function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [submitting, setSubmitting] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
 
   const router = useRouter();
@@ -74,17 +77,25 @@ function LoginPage() {
               onChange={(e) => setEmail(e.target.value)}
               value={email}
             />
-            <Input
-              type="password"
-              name="password"
-              id="password"
-              placeholder="Password"
-              autoComplete="off"
-              required
-              className="w-full rounded-md bg-zinc-800 py-6 text-base"
-              onChange={(e) => setPassword(e.target.value)}
-              value={password}
-            />
+            <div className="relative flex items-center">
+              <Input
+                type={showPassword ? "text" : "password"}
+                name="password"
+                id="password"
+                placeholder="Password"
+                autoComplete="off"
+                required
+                className="w-full rounded-md bg-zinc-800 py-6 text-base"
+                onChange={(e) => setPassword(e.target.value)}
+                value={password}
+              />
+              <div
+                className="absolute right-4 cursor-pointer text-[#999999]"
+                onClick={() => setShowPassword((prev) => !prev)}
+              >
+                {!showPassword ? <HiEye size={25} /> : <HiEyeSlash size={25} />}
+              </div>
+            </div>
           </div>
           <Button
             type="submit"
