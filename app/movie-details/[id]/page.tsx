@@ -160,7 +160,7 @@ async function MovieDetailsPage({
       </div>
       <div className="mt-4 flex flex-col justify-center gap-4 px-4 py-2 md:px-8">
         <h2 className="text-2xl font-bold md:text-3xl">Reviews</h2>
-        <div className="grid w-full grid-cols-2 gap-2 md:gap-8 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid w-full gap-2 md:grid-cols-2 md:gap-8 lg:grid-cols-3 xl:grid-cols-4">
           {reviews.length > 0 ? (
             reviews.map((review: any) => (
               <div key={review._id}>
