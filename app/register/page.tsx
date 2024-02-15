@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input";
 import { BASE_API_URL } from "@/index";
 
 import { HiEye, HiEyeSlash } from "react-icons/hi2";
+import { useSession } from "next-auth/react";
 
 function RegisterPage() {
   const [name, setName] = useState("");
@@ -19,6 +20,14 @@ function RegisterPage() {
   const [error, setError] = useState("");
 
   const router = useRouter();
+  const session = useSession();
+
+  useEffect(() => {
+    if (session.status === "authenticated") {
+      router.push("/");
+      router.refresh();
+    }
+  }, [session, router]);
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
