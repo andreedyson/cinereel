@@ -44,8 +44,9 @@ function LoginPage() {
     setSubmitting(true);
 
     const res = await signIn("credentials", {
-      email,
+      email: email.toLowerCase(),
       password,
+      redirect: false,
     });
 
     if (res?.error) {
