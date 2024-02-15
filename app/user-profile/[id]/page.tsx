@@ -92,7 +92,7 @@ async function UserProfilePage({ params: { id } }: { params: { id: string } }) {
           <h2 className="text-center text-xl font-bold md:text-3xl">
             Movies Reviewed by {user.name}
           </h2>
-          <div className="grid w-full gap-3 sm:grid-cols-2 min-[850px]:max-xl:grid-cols-3 2xl:grid-cols-4">
+          <div className="grid w-full gap-3 md:grid-cols-2 min-[850px]:max-xl:grid-cols-3 2xl:grid-cols-4">
             {reviews.length > 0 ? (
               reviews.map((review: any) => (
                 <div key={review._id}>
