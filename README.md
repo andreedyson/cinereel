@@ -11,9 +11,6 @@ Next.js and MongoDB-powered movie database web app with shadcn for seamless brow
 - Watch Movies Trailers
 - View Movie Details
 
-<a href="https://cinereel.vercel.app/">View the live app</a>
-
-
 ## Core Stack
 - Next.js
 - MongoDB
